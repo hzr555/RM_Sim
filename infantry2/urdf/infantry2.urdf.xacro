@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="infantry" xmlns:xacro="http://wiki.ros.org/xacro">
+   <xacro:include filename="gazebo/control.xacro" />
+   <xacro:include filename="gazebo/move.xacro" />
+   <xacro:include filename="gazebo/camera.xacro"/>
+   <xacro:include filename="gazebo/imu.xacro"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00137863188993259 0.0115059324212963 0.0427374455241142"
+        rpy="0 0 0" />
+      <mass
+        value="2.74361495301529" />
+      <inertia
+        ixx="0.00339522103126171"
+        ixy="5.6833344776147E-05"
+        ixz="8.63787092638423E-05"
+        iyy="0.00230253885860913"
+        iyz="4.81630906209565E-06"
+        izz="0.00263238186244752" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="dipang_Link">
+    <inertial>
+      <origin
+        xyz="-0.0231581281624952 -0.000665486188006936 0.0209895806590208"
+        rpy="0 0 0" />
+      <mass
+        value="2.36802677367184" />
+      <inertia
+        ixx="0.00670845477248876"
+        ixy="2.61445286349158E-07"
+        ixz="-9.5694467826242E-06"
+        iyy="0.00392123421561026"
+        iyz="2.82397085456505E-06"
+        izz="0.00839185009539491" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/dipang_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/dipang_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="dipang_Link_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0744999999999901"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="dipang_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_front_Link">
+    <inertial>
+      <origin
+        xyz="-1.2307E-06 0.020501 -5.7698E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.3789" />
+      <inertia
+        ixx="0.00064351"
+        ixy="-1.8716E-09"
+        ixz="-4.3899E-09"
+        iyy="0.0011794"
+        iyz="-3.8139E-09"
+        izz="0.00064351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/left_front_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/left_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_Link_joint"
+    type="continuous">
+    <origin
+      xyz="0.13665 0.1194 -0.062884"
+      rpy="0 0 0" />
+    <parent
+      link="dipang_Link" />
+    <child
+      link="left_front_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_front_Link">
+    <inertial>
+      <origin
+        xyz="-1.2288E-06 -0.020501 6.8286E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.3789" />
+      <inertia
+        ixx="0.00064351"
+        ixy="1.6754E-09"
+        ixz="4.0341E-09"
+        iyy="0.0011794"
+        iyz="-3.904E-09"
+        izz="0.0006435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/right_front_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/right_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_Link_joint"
+    type="continuous">
+    <origin
+      xyz="0.13665 -0.1194 -0.062884"
+      rpy="0 0 0" />
+    <parent
+      link="dipang_Link" />
+    <child
+      link="right_front_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_back_Link">
+    <inertial>
+      <origin
+        xyz="1.2288E-06 0.020501 6.8324E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.3789" />
+      <inertia
+        ixx="0.00064351"
+        ixy="1.6753E-09"
+        ixz="-4.0341E-09"
+        iyy="0.0011794"
+        iyz="3.9038E-09"
+        izz="0.0006435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/left_back_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/left_back_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_back_Link_joint"
+    type="continuous">
+    <origin
+      xyz="-0.13665 0.1194 -0.062884"
+      rpy="0 0 0" />
+    <parent
+      link="dipang_Link" />
+    <child
+      link="left_back_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_back_Link">
+    <inertial>
+      <origin
+        xyz="1.2307E-06 -0.020501 -5.771E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.3789" />
+      <inertia
+        ixx="0.00064351"
+        ixy="-1.8715E-09"
+        ixz="4.3901E-09"
+        iyy="0.0011794"
+        iyz="3.8139E-09"
+        izz="0.00064351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/right_back_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/right_back_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_back_Link_joint"
+    type="continuous">
+    <origin
+      xyz="-0.13665 -0.11947 -0.062884"
+      rpy="0 0 0" />
+    <parent
+      link="dipang_Link" />
+    <child
+      link="right_back_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="yuntai_Link">
+    <inertial>
+      <origin
+        xyz="0.024453 -0.050603 0.0064437"
+        rpy="0 0 0" />
+      <mass
+        value="1.1104" />
+      <inertia
+        ixx="0.00075579"
+        ixy="-1.4432E-05"
+        ixz="-8.3027E-05"
+        iyy="0.002088"
+        iyz="4.2257E-06"
+        izz="0.0025494" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry_new/meshes/yuntai_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry_new/meshes/yuntai_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yuntai_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0091705 0.054508 0.16"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="yuntai_Link" />
+    <axis
+      xyz="-0.06696 0.99776 0" />
+    <limit
+      lower="-0.7853"
+      upper="0.7853"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="camera_Link">
+    <inertial>
+      <origin
+        xyz="0.039555 -0.012005 -0.013618"
+        rpy="0 0 0" />
+      <mass
+        value="0.06027" />
+      <inertia
+        ixx="7.3515E-06"
+        ixy="-4.6518E-07"
+        ixz="-5.5904E-08"
+        iyy="1.3207E-05"
+        iyz="1.7098E-08"
+        izz="1.3244E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/camera_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/camera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_Link"
+    type="fixed">
+    <origin
+      xyz="0.083904 -0.03486 0.05921"
+      rpy="0 0 0" />
+    <parent
+      link="yuntai_Link" />
+    <child
+      link="camera_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_Link">
+    <inertial>
+      <origin
+        xyz="-0.015935 0.034237 -0.031754"
+        rpy="0 0 0" />
+      <mass
+        value="0.029952" />
+      <inertia
+        ixx="1.882E-06"
+        ixy="-2.8794E-07"
+        ixz="-1.3014E-07"
+        iyy="6.1533E-06"
+        iyz="-8.7339E-09"
+        izz="7.1853E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/imu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://infantry2/meshes/imu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_Link_joint"
+    type="fixed">
+    <origin
+      xyz="-0.061947 -0.13239 0.018687"
+      rpy="0 0 0" />
+    <parent
+      link="yuntai_Link" />
+    <child
+      link="imu_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+</robot>

@@ -1,0 +1,32 @@
+<robot name="yuntai" xmlns:xacro="http://wiki.ros.org/xacro">
+ 
+ <transmission name="tran1"><!-- 名字自定义  --> 
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="dipang_Link_joint"><!-- 名字必须与swivel_J0对应一致  --> 
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1"><!-- 名字自定义  --> 
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran2"><!-- 名字自定义  --> 
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="yuntai_Link_joint"><!-- 名字必须与swivel_J0对应一致  --> 
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2"><!-- 名字自定义  --> 
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/infantry</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

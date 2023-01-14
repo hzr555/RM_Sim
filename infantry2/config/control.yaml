@@ -1,0 +1,16 @@
+infantry:
+  # Publish all joint states -----------------------------------
+  infantryjoint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  xiaotuoluo_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: dipang_Link_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  yuntai_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yuntai_Link_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}

@@ -1,0 +1,22 @@
+<robot name="move" xmlns:xacro="http://wiki.ros.org/xacro">
+ 
+<gazebo>
+  <plugin name="rm_drive" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>50.0</updateRate>
+    <robotNamespace></robotNamespace>
+    <leftFrontJoint>left_front_Link_joint</leftFrontJoint>
+    <leftRearJoint>left_back_Link_joint</leftRearJoint>
+    <rightFrontJoint>right_front_Link_joint</rightFrontJoint>
+    <rightRearJoint>right_back_Link_joint</rightRearJoint>
+    <wheelSeparation>4</wheelSeparation>
+    <wheelDiameter>0.1</wheelDiameter>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <odometryFrame>odom</odometryFrame>
+    <torque>1</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>1</broadcastTF>
+  </plugin>
+</gazebo>
+</robot>
