@@ -1,0 +1,8 @@
+<launch>  
+  <arg name="model" default="$(find testTF)/urdf/robt_car.xacro"/>
+
+  <include file="$(find testTF)/launch/gazebo.launch">
+    <arg name="model" value="$(arg model)" />
+  </include>
+	
+</launch>
