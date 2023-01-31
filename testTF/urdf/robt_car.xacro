@@ -5,4 +5,5 @@
     <xacro:include filename="laser.xacro" />
     <xacro:include filename="gazebo/move.xacro" />
     <xacro:include filename="gazebo/camera_sensors.xacro" />
+    <xacro:include filename="gazebo/laser_sensors.xacro" />
 </robot>

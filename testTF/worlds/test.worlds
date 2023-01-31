@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sdf version="1.0">
+	<world name="default">
+		<include>
+			<uri>model://sun</uri>
+		</include>
+		<include>
+			<uri>model://ground_plane</uri>
+		</include>
+		<model name="fengche">
+			<pose>0 0 1 0 0 0</pose>
+			<static>true</static>
+			<link name="up">
+				<visual name="visual">
+					<geometry>
+						<mesh><uri>file://rmuc.dae</uri></mesh>
+					</geometry>
+				</visual>
+			</link>
+		</model>
+	</world>
+</sdf>
