@@ -30,7 +30,7 @@
     #设置仿真世界中物体的旋转角以及惯性参数
     /gazebo/set_model_status  
     
-###脚本介绍
+### 脚本介绍
 
     rosrun testTF *.py #运行控制程序
     
@@ -42,11 +42,24 @@
   
   待完成，会将物体和小车的仿真世界坐标通过topic的方式发布出来。。
 
+### **2月1日** 新增gmapping建图功能
+  在 test.launch 文件中添加了gmapping node，可以通过获取 /scan , 以及里程计坐标 odom , 模型TF , 将地图汇出，
+  具体效果如通过 mapserver 保存的图片
+
+ ![](./test.JPG)
+
+
 ### END
 #### **PS:** 记得给py文件权限，不然rosrun的时候找不到文件！！
     sudo chmod 777 *.py
+
+**会将建立 urdf 以及 gazebo 控制器添加的文章一同推出**
+
+### 引用
+  其中 launch 文件打开的 world，是在开源仓库rm_control所使用的。
+ 
+  地址如下[点击这里](https://github.com/rm-controls/rm_control)
   
 # ***-->To Be Continued -->***
-      
       
 
