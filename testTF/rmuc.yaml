@@ -1,4 +1,4 @@
-image: summmer/rmuc.yaml.pgm
+image: rmuc.pgm
 resolution: 0.050000
 origin: [-1.000000, -20.200000, 0.000000]
 negate: 0
