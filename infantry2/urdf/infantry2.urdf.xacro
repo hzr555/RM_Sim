@@ -334,7 +334,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://infantry_new/meshes/yuntai_Link.STL" />
+          filename="package://infantry2/meshes/yuntai_Link.STL" />
       </geometry>
       <material
         name="">
@@ -348,7 +348,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://infantry_new/meshes/yuntai_Link.STL" />
+          filename="package://infantry2/meshes/yuntai_Link.STL" />
       </geometry>
     </collision>
   </link>
