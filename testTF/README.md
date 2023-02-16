@@ -13,10 +13,28 @@
         |--worlds
             |--"test.world"  #简单的仿真世界,放置了一个障碍物,体积为0.2*0.5*0.2
         |--scripts
-            |--control.py #控制小车在仿真世界中运动
+            |--control.py #控制小车在仿真世界中运动        
+        |--map
+            |--rmuc_2.yaml #已创建好的 rmuc 地图
         |--launch
             |--gazebo.launch #用来启动gazebo以及将小车放入仿真世界中
-            |--test.launch  #主启动文件,包含gazebo.launch
+            |--test_slam.launch  # slam 建图文件,包含gazebo.launch
+            |--demo_env.launch #启动gazebo仿真的文件
+            |--savemaps.launch #保存地图的文件
+            |--readmaps.launch #加载地图的文件
+            |--location.launch #定位文件，包含demo_env.launch
+            |--path.launch #路径规划文件，寻找导航时的最优路径
+            |--navigate.launch #导航文件，包含demo_env.launch , readmaps.launch 和 path.launch 
+        |--param 
+            |--costmap_common_params.yaml #move_base 在全局路径规划与本地路径规划时调用的通用参数
+            |--global_costmap_params.yaml #全局代价地图参数设置
+            |--local_costmap_params.yaml  #局部代价地图参数设置
+            |--base_local_planner_params.yaml #基本的局部规划器参数配置，这个配置文件设定了机器人的最大和最小速度限制值，也设定了加速度的阈值
+        |--rviz
+            |--loc.rviz #用于定位的 rviz 文件  
+            |--nav.rviz #用于导航的 rviz 文件
+        |--src
+            |--control.cpp #C++版本的小车控制文件
 ### 使用topic如下：
   --topic：
     
@@ -43,11 +61,14 @@
   待完成，会将物体和小车的仿真世界坐标通过topic的方式发布出来。。
 
 ### **2月1日** 新增gmapping建图功能
-  在 test.launch 文件中添加了gmapping node，可以通过获取 /scan , 以及里程计坐标 odom , 模型TF , 将地图汇出，
+  在 test_slam.launch 文件中添加了gmapping node，可以通过获取 /scan , 以及里程计坐标 odom , 模型TF , 将地图汇出，
   具体效果如通过 mapserver 保存的图片
 
  ![](./test.JPG)
 
+### **2月16日** 新增locate定位功能和navigate导航功能
+  在 location.launch 文件中实现了定位功能。
+  在 navigate.launch 文件中实现了导航功能。
 
 ### END
 #### **PS:** 记得给py文件权限，不然rosrun的时候找不到文件！！
