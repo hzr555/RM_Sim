@@ -7,7 +7,9 @@
 	    <arg name="scan_topic" default="scan" />                  <!-- 根据自己发布scan名称进行修改 -->
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen" clear_params="true">
         <param name="base_frame" value="base_footprint"/>     <!-- 根据自己的基座标系名称进行修改 -->
-        <param name="odom_frame" value="odom"/>               <!-- 根据自己的里程计坐标系名称进行修改 -->
+        <param name="odom_frame" value="odom"/>               <!-- 根据自己的里程计坐标系名称进行修改 -->        
+        <param name="map_frame" value="map"/>               <!-- 根据自己的 map 坐标系名称进行修改 -->
+
         <param name="map_update_interval" value="4.0"/>
         <!-- Set maxUrange < actual maximum range of the Laser -->
         <param name="maxRange" value="5.0"/>
@@ -40,4 +42,6 @@
         <param name="lasamplestep" value="0.005"/>
         <remap from="scan" to="$(arg scan_topic)"/>
     </node>
+        
+
 </launch>

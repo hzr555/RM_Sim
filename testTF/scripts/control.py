@@ -33,13 +33,13 @@ class SubscribeAndPublish:
         if key_last != key and key != -1:
             key_last = key
         if(key == 119 or key_last == 119):
-            move_cmd.linear.x = 0.6
+            move_cmd.linear.x = 0.99
         if(key == 97 or key_last == 97):
-            move_cmd.angular.z = 0.6   
+            move_cmd.angular.z = 0.99   
         if(key == 100 or key_last == 100):
-            move_cmd.angular.z = -0.6   
+            move_cmd.angular.z = -0.99   
         if(key == 120 or key_last == 120):
-            move_cmd.linear.x = -0.6               
+            move_cmd.linear.x = -0.99               
         
         self.__pub_.publish(move_cmd)
         if  key & 0xFF == 27:
